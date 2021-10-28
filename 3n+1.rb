@@ -1,44 +1,29 @@
-input = [0, 0] #expecting two integers
-
+#link for the problem set: https://onlinejudge.org/external/1/100.pdf
 puts "enter first integer"
-input[0]= gets.to_i
+i= gets.to_i
 puts "enter second integer"
-input[1]= gets.to_i
-
-#modifying the original array instead of making a new sorted array; rearranging from lower to higher number
-input.sort!
-
-#passing the values to variables i and j to comply with the problem set variables
-i = input[0]
-j = input[1]
-
-puts "this is the input #{input}"
+j= gets.to_i
 
 result = []
-
 cycle_set = []
-cycle = nil
-for n in (i..j)
-    cycle = 0
+
+for n in (i..j).to_a
+    cycle = []
     while n > 0
+        cycle.push(n)
         if n == 1
-            n = 1
-            cycle+=1
             break
         end
         if n.odd?
             n = 3*n+1
-            cycle+= 1
-        elsif n.even?
+        else
             n = n/2
-            cycle+= 1
         end
-        #puts n
     end
-    cycle_set.push(cycle)
+    cycle_set.push(cycle.length)
 end
 
 max_cycle = cycle_set.max
-
 result.push(i,j,max_cycle)
+
 puts "#{result}"
