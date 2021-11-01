@@ -1,3 +1,4 @@
+#example of Single Responsibility Principle
 class Palindrome
     def initialize(string)
         @string = string
