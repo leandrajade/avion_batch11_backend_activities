@@ -5,24 +5,30 @@
 # 1x P5
 # 2x P1
 
-class Money 
-    def initialize(oneThousand = 0, fiveHundred = 0, twoHundred = 0, oneHundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, one = 0)
-        @oneThousand =oneThousand
-        @fiveHundred =fiveHundred
-        @twoHundred =twoHundred
-        @oneHundred =oneHundred
-        @fifty =fifty
-        @twenty =twenty
-        @ten =ten
-        @five =five
-        @one =one
-    end
-end
+# class Money 
+#     def initialize(oneThousand = 0, fiveHundred = 0, twoHundred = 0, oneHundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, one = 0)
+#         @oneThousand =oneThousand
+#         @fiveHundred =fiveHundred
+#         @twoHundred =twoHundred
+#         @oneHundred =oneHundred
+#         @fifty =fifty
+#         @twenty =twenty
+#         @ten =ten
+#         @five =five
+#         @one =one
+#     end
+# end
 
-class CashRegister < Money
-    def initialize(total_amount, payment_amount)
+class CashRegister 
+
+    def get_total_amount(total_amount)
         @total_amount = total_amount
+        return total_amount
+    end
+
+    def get_payment_amount(payment_amount)
         @payment_amount = payment_amount
+        return payment_amount
     end
 
     def calculate_change
@@ -77,5 +83,7 @@ class CashRegister < Money
 end
 
 
-wallet = CashRegister.new(200, 500)
-puts wallet.get_change
+change = CashRegister.new()
+puts change.get_total_amount(255)
+puts change.get_payment_amount(500)
+puts change.calculate_change
