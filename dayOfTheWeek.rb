@@ -15,5 +15,5 @@ class Date
 end
 
 ## execute 
-note = Date.new("9-9-1969")
-puts note.dayname
+date = Date.new("9-9-1969")
+puts date.dayname
