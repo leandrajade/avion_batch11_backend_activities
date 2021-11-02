@@ -10,12 +10,8 @@ module BuyerPermission
     end
 end
 
-
 class User
-  attr_accessor :username
   attr_accessor :password
-  attr_accessor :ip_address
-
   def initialize(username, password, ip_address)
      @username = username
      @password = password
@@ -31,8 +27,6 @@ class User
     puts "User logged in. IP address: #{ip_address}"
   end
 end
-  
-
 
 class Admin < User
   include AdminPermission
@@ -42,7 +36,6 @@ class Admin < User
   end
 end
   
-  
 class Buyer < User
   include BuyerPermission
 
@@ -50,11 +43,8 @@ class Buyer < User
     login
   end
 end
-  
-  
 
 ## execute
-
 my_admin = Admin.new('avionuser', 'password', '127.0.0.1')
 my_admin.admin_login
 my_admin.edit_users_profile
