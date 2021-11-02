@@ -6,7 +6,7 @@ end
 
 class Cupcake < Confection
     def bake
-        super && "Applying frosting"
+        super + "Applying frosting"
     end
 end
 
