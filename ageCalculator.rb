@@ -1,3 +1,4 @@
+# compute age from birthdate
 require 'date'
 class AgeCalculator
     def initialize(birthday)
@@ -19,7 +20,7 @@ class AgeCalculator
     end
 end
 
-## executes
+## execute
 
 birthday = AgeCalculator.new("24-7-1970")
 puts birthday.set_birthday
