@@ -4,21 +4,6 @@
 # output the least amount of bills and coins for the change
 # 1x P5
 # 2x P1
-
-# class Money 
-#     def initialize(oneThousand = 0, fiveHundred = 0, twoHundred = 0, oneHundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, one = 0)
-#         @oneThousand =oneThousand
-#         @fiveHundred =fiveHundred
-#         @twoHundred =twoHundred
-#         @oneHundred =oneHundred
-#         @fifty =fifty
-#         @twenty =twenty
-#         @ten =ten
-#         @five =five
-#         @one =one
-#     end
-# end
-
 class CashRegister 
     
     def set_total_amount(total_amount)
