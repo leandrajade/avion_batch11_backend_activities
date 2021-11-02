@@ -1,9 +1,4 @@
-# ask for the total amount: 3
-# ask for the payment amount: 10
-
-# output the least amount of bills and coins for the change
-# 1x P5
-# 2x P1
+# minimum bills and coins for change
 class CashRegister 
     
     def set_total_amount(total_amount)
