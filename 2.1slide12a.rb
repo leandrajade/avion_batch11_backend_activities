@@ -9,7 +9,7 @@ class Palindrome
     end
     
     def reverse_string
-        return reversed = remove_space().reverse
+        return remove_space().reverse
     end
     
     def is_palindrome
