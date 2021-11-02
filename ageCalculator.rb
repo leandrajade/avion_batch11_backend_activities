@@ -1,30 +1,30 @@
+require 'date'
 class AgeCalculator
-    def initialize(year, month, day)
-        @year = year
-        @month = month
-        @day = day
+    def initialize(birthday)
+        @birthday = birthday
+    end
+
+    def set_birthday
+        return Date.parse(@birthday)
     end
 
     def get_age
-        now = Time.now
-        age = (now.year - @year) - 1 #subtracting 1 year from age by default
-        if now.month > @month || now.month == @month && now.day >= @day
-            age  += 1 #using months and days to validate the subtracted 1 year from age
+        now = Date.today
+        birthday = set_birthday()
+        age = (now.year - birthday.year) - 1 #subtracting 1 year from age by default
+        if now.month > birthday.month || now.month == birthday.month && now.month >= birthday.day
+            age += 1 #using months and days to validate the subtracted 1 year from age
         end
         return age 
     end
 end
 
-## execute
-puts "enter your birth year"
-year = gets.to_i
-puts "enter your birth month"
-month = gets.to_i
-puts "enter your birth day"
-day = gets.to_i
+## executes
 
-birthday = AgeCalculator.new(year,month,day)
+birthday = AgeCalculator.new("24-7-1970")
+puts birthday.set_birthday
 puts birthday.get_age
+
 
 
 
