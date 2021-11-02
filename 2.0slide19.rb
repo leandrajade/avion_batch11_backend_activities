@@ -1,5 +1,4 @@
 ## an example encapsulation as it gives us the BMI of the Human instance without having a BMI property
-
 class Human
     def initialize(weight, height)
         @weight = weight
@@ -27,7 +26,7 @@ end
 
 ## execute
 
-myBmi = Human.new(60, 1.57)
+myBmi = Human.new(65, 1.57)
 puts myBmi.bmi
 puts myBmi.result
 
