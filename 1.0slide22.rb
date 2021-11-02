@@ -4,7 +4,7 @@ puts "enter a number"
 
 input = gets.to_i
 is_squared = false
-
+i = 0
 while i <= input
     squared = i * i
     if squared == input
