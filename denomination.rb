@@ -20,13 +20,13 @@
 # end
 
 class CashRegister 
-
-    def get_total_amount(total_amount)
+    
+    def set_total_amount(total_amount)
         @total_amount = total_amount
         return total_amount
     end
 
-    def get_payment_amount(payment_amount)
+    def set_payment_amount(payment_amount)
         @payment_amount = payment_amount
         return payment_amount
     end
@@ -34,56 +34,47 @@ class CashRegister
     def calculate_change
         change = @payment_amount - @total_amount
         return change
+    end 
+    
+    def display_change
+        minimum_denomination = self.get_change()
+        minimum_denomination.each do |currency, count| 
+            puts "your change is #{count}x of #{currency}"
+        end
     end
 
     def get_change
         change = self.calculate_change()
+        currencies = [1000, 500, 200, 100, 50, 20, 10, 5, 1]
+        minimum_denomination = {} #location to set the currency and its count (currency:count)
 
-
-        until change == 0
-            if change >= 1000
-                @oneThousand = change / 1000
-                change -=@oneThousand * 1000
-                return @oneThousand
-            elsif change >= 500
-                @fiveHundred = change / 500
-                change -= @fiveHundred * 500
-                return @fiveHundred
-            elsif change >= 200
-                @twoHundred = change / 200
-                change -= @twoHundred * 200
-                return @twoHundred
-            elsif change >= 100
-                @oneHundred = change / 100
-                change -= @oneHundred * 100
-                return @oneHundred
-            elsif change >= 50
-                @fifty = change / 50
-                change -= @fifty * 50
-                return @fifty
-            elsif change >= 20
-                @twenty = change / 20
-                change -= @twenty * 20
-                return @twenty
-            elsif change >= 10
-                @ten = change / 10
-                change -= @ten * 10
-                return @ten
-            elsif change >= 5
-                @five = change / 5
-                change -= @five * 5
-                return @five
-            elsif change >= 1
-                @one = change / 1
-                change -= @one * 1
-                return @one
+        currencies.each do |currency| 
+            if change >= currency
+                minimum_denomination[currency] = change / currency #setting hash using currency as key and count as its values
+                change -= (change / currency) * currency
             end
         end
+
+        return minimum_denomination
+
+        # until change == 0
+        #     if change >= 1000
+        #         @oneThousand = change / 1000
+        #         change -=@oneThousand * 1000
+        #         return @oneThousand
+        #     elsif change >= 500
+        #         @fiveHundred = change / 500
+        #         change -= @fiveHundred * 500
+        #         return @fiveHundred
+        #           ...
+        
     end
 end
 
+## execute
 
 change = CashRegister.new()
-puts change.get_total_amount(255)
-puts change.get_payment_amount(500)
-puts change.calculate_change
+puts change.set_total_amount(250)
+puts change.set_payment_amount(1000)
+change.get_change()
+change.display_change()
