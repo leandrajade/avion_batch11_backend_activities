@@ -9,7 +9,7 @@ class Date
     end
 
     def dayname
-        note = set_date()
+        note = self.set_date()
         DAYNAMES[note.wday]
     end
 end
