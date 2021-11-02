@@ -1,5 +1,5 @@
 class Picture
-    def initialize(camera = false, subject = false, image = false)
+    def initialize(camera = nil, subject = false, image = false)
         @camera = camera
         @subject = subject
         @image = image
@@ -28,4 +28,9 @@ class Picture
         puts "posing subject"
     end
 end
+
+## execute
+
+photoOp = Picture.new
+photoOp.take_picture
 

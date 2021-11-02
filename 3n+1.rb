@@ -23,7 +23,7 @@ for n in (i..j).to_a
     cycle_set.push(cycle.length)
 end
 
-max_cycle = cycle_set.max
+max_cycle = cycle_set.max() 
 result.push(i,j,max_cycle)
 
 puts "#{result}"
