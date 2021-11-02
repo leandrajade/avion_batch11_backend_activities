@@ -1,3 +1,4 @@
+# get day of the week given a date
 require 'date'
 class Date
     def initialize(date)
