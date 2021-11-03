@@ -1,0 +1,40 @@
+filename: sql_exercise.txt
+
+1. Create a table named 'Students'. Fields: name: character varying(50), course: character varying(50), age: numeric.
+CREATE TABLE students(
+    id SERIAL PRIMARY KEY,
+    name CHARACTER VARYING(50) NOT NULL,
+    course CHARACTER VARYING(50) NOT NULL,
+    age NUMERIC
+);
+
+2. Insert 5 records to the students table. You are in charge of the data.
+INSERT INTO students (name,course,age) values ('Beth','Economics',20);
+INSERT INTO students (name,course,age) values ('Meghan','Philosophy',22);
+INSERT INTO students (name,course,age) values ('Leann','Architecture',18);
+INSERT INTO students (name,course,age) values ('Richard','Physics',19);
+INSERT INTO students (name,course,age) values ('Emilyn','Medicine',25);
+
+3. Sort them by descending age.
+SELECT * FROM students ORDER BY age desc;
+
+4. Get their average age.
+SELECT AVG(age) FROM students;
+
+5. Get the sum of their age.
+SELECT SUM(age) FROM students;
+
+6. Display millenials (age 25 to 32 yrs old).
+SELECT * FROM students WHERE age>24 AND age<33;
+
+7. Update the course of millenials to "Millenialogy".
+UPDATE students SET course = 'Millenialogy' WHERE age>24 AND age<33;
+
+8. Delete students whose age are greater than 30.
+DELETE FROM students WHERE age>30;
+
+9. Display the names of the students
+SELECT name FROM students;
+
+10. Display the names and courses of students whose age are lower than 20
+SELECT name, course FROM students WHERE age<20;
