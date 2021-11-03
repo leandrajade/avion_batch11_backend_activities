@@ -20,8 +20,8 @@ UPDATE students SET first_name = 'Ivan', middle_name = 'Ingram', last_name = 'Ho
 DELETE FROM students WHERE id = 1;
 
 ---- slide 23
- 
+
 SELECT COUNT(id) FROM students;
-SELECT * FROM students where location = 'Manila';
-select avg(age) from students;
-select * from students order by age desc;
+SELECT * FROM students WHERE location = 'Manila';
+SELECT AVG(age) FROM students;
+SELECT * FROM students ORDER BY age DESC;
