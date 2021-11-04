@@ -12,7 +12,7 @@ class UniqueCharacters
     def sort_unique_in_order
         unique_characters = []
         i = 0
-        
+
         while i <= @input.length - 1
             if @input[i] != @input[i+1]
                 unique_characters.push(@input[i])
@@ -30,7 +30,6 @@ input = gets.chomp
 
 test = UniqueCharacters.new(input)
 test.display_unique_in_order()
-
 
 # @input.each_with_index do |character, i|
 #     if character[i] != character[i+1]
