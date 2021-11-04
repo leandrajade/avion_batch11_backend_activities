@@ -11,16 +11,15 @@ class UniqueCharacters
 
     def sort_unique_in_order
         unique_characters = []
+        
         i = 0
         while i <= @input.length - 1
-            curr = @input[i]
-            nexx = @input[i + 1]
-
-            if curr != nexx
-                unique_characters.push(curr)
+            if @input[i] != @input[i+1]
+                unique_characters.push(@input[i])
             end
             i+=1
         end
+
         return unique_characters
     end
 end
