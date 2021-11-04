@@ -21,7 +21,6 @@ class UniqueCharacters
             end
             i+=1
         end
-       
         return unique_characters
     end
 end
