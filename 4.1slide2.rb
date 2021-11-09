@@ -4,15 +4,18 @@ class CenturyCalculator
     end
 
     def get_century
-        # now = Date.today
-        century = (@input / 100) + 1
-
-        return century
+        century = @input / 100
+        if century % 1 == 0
+            return century.to_i
+        else
+            return century.to_i + 1
+        end 
     end
 end
 
 ## execute
+puts "enter year"
+year = gets.to_f
 
-yearNow = CenturyCalculator.new(1400)
-
-puts yearNow.get_century
+yearInput = CenturyCalculator.new(year)
+puts yearInput.get_century
