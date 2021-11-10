@@ -1,0 +1,35 @@
+type -- rails console -- on Ubuntu
+
+1. Create 5 articles.
+Article.create!(name:"article one", body: "body of article one")
+Article.create!(name:"article two", body: "body of article two")
+Article.create!(name:"article three", body: "body of article three")
+Article.create!(name:"article four", body: "body of article four")
+Article.create!(name:"article five", body: "body of article five")
+
+2. Display the count.
+Article.count
+
+3. Display all the names.
+Article.pluck(:name)
+
+4. Display all the ids and names.
+Article.pluck(:id, :name)
+
+5. Change the name of the first article into "Edited".
+Article.first.update(name: "Edited")
+
+6. Change the body of the last article into "Bench".
+Article.last.update(body: "Bench")
+
+7. Delete all articles having "Bench" as the body.
+Articles.where(body: "Bench").destroy_all
+
+8. Change all articles with name as "Edited" into "Edited part 2"
+Articles.where(name: "Edited").update(name: "Edited part 2")
+
+9. Delete all articles that does not have the name "Edited part 2"
+Articles.where.not(name: "Edited part 2").destroy_all
+
+10. Display the count
+Articles.count
