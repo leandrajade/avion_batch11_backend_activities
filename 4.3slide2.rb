@@ -6,6 +6,8 @@
 # turn the numbers back into vowels according to the
 # same pattern shown above.
 
+## 1st solution ##
+
 def encode(string)
     string.tr("aeiou", "12345")
 end
@@ -13,127 +15,43 @@ def decode(string)
     string.tr("12345", "aeiou")
 end
 
-puts encode('rowena')
-puts decode('n23sf3fv')
+## execute 
+puts encode('magical')
+puts decode('w2lc4m2')
 
 
-# def encode(string)
-#     vowels = ["a", "e", "i", "o", "u"]
+## 2nd solution ##
 
-#     newString = []
+def encode(string)
+    vowels = { "a" => 1, "e" => 2, "i" => 3, "o" => 4, "u" => 5 }
+    newString = []
 
-#     string.chars.each do |letter|
-#         vowels.each do |v|
-#             if letter == v
-#                 newString << vowels.find_index(v) + 1
-#             else
-#                 newString << letter
-#             end
-#         end
-#     end
+    string.chars.each do |letter|
+        if vowels.include? letter
+            newString << vowels[letter]
+        else
+            newString << letter
+        end
+    end
 
-#     return "#{newString}"
-# end
+    return "#{newString.join}"
+end
 
-# puts encode("edna")
+def decode(string)
+    int = { "1" => "a", "2" => "e", "3" => "i", "4" => "o", "5" => "u" }
+    newString = []
 
-# def vowel_censor(sentence)
-#     vowels = "aeiou".chars
-#     result = []
-#     sentence.chars.each do |charachter|
-#       if vowels.include?(charachter)
-#         result << "X"
-#       else
-#         result << charachter
-#       end
-#     end
-#     result.join("")
-# end
+    string.chars.each do |char|
+        if int.include? char
+            newString << int[char]
+        else
+            newString << char
+        end
+    end
 
-# def encode(string)
-#     vowels = "aeiou".chars
-#     result = []
+    return "#{newString.join}"
+end
 
-#     string.chars.each do |letter|
-#         if letter == vowels
-#             result << letter.index(vowels)
-#         else
-#             result << letter
-#         end
-#     end
-#     result.join("")
-# end
-
-# puts encode("rowena")
-# def encode(string)
-#     vowels = {"a" => "1", "e" => "2", "i" => "3", "o" => "4", "u" => "5"}
-#     separated = string.chars
-#     newStr = []
-#     for key, value in vowels
-#         separated.each do |letter| 
-#             if letter == key
-#                 newStr << letter.gsub(letter, value)
-#             else 
-#                 newStr << letter
-#             end
-#         end
-#     end
-#     puts "#{newStr}"
-# end
-
-# puts encode("edna")
-# class Encode
-#     def initialize(string)
-#         @string = string.chars
-#     end
-
-#     vowels = {"a" => "1", "e" => "2", "i" => "3", "o" => "4", "u" => "5"}
-#     newStr = []
-
-#     def get_values_from_vowels
-#         vowels.each do |key, value|
-#             return key
-#         end
-#     end
-
-#     def encode_vowels
-#         @string.each do |letter|
-#             if letter == get_values_from_vowels
-#                 newStr << @string.gsub(letter, values)
-#             end
-#         end
-#     end
-
-#     return newStr
-    
-# end
-
-# ednu = Encode.new("ednu")
-# ednu.encode_vowels
-
-# string = string.gsub(key, vowels[value])
-# splitted = string.chars 
-# for key, value in vowels
-
-#     encoded = nil
-#     splitted.each do |lette~r|
-#         if letter == key
-#             letter.gsub(letter, value)
-#             encoded.push(value)
-#         end
-#     end
-
-#     puts encoded
-# end
-
-# vow = {"a":"1", "e":"2", "i":"3", "o":"4", "u":"5"}
-
-# def encode(st):
-#     for w in vow:
-#         st = st.replace(w, vow[w])
-#     return st
-
-# def decode(st):
-#     for k,v in vow.items():
-#         st = st.replace(v, k)
-#     return st
+##execute
+puts encode('magical')
+puts decode('w2lc4m2')
