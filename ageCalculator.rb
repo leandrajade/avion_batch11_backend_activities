@@ -13,7 +13,7 @@ class AgeCalculator
         now = Date.today
         birthday = self.set_birthday()
         age = (now.year - birthday.year) - 1 #subtracting 1 year from age by default
-        if now.month > birthday.month || now.month == birthday.month && now.month >= birthday.day
+        if now.month > birthday.month || now.month == birthday.month && now.day >= birthday.day
             age += 1 #using months and days to validate the subtracted 1 year from age
         end
         return age 
